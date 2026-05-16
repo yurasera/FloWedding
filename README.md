@@ -1,5 +1,12 @@
 # FloWedding — Undangan Digital (React + Parallax)
 
+Project undangan digital ReactJS dengan efek parallax + reveal animation, siap dijalankan.
+
+## Custom:
+Ubah konten (nama mempelai, tanggal, lokasi, agenda, WA) di: `/src/data/invitation.js`
+Personalisasi nama tamu via URL: `http://localhost:5173/?to=Nama%20Tamu`
+File utama: `/FloWedding/src/App.jsx` dan style: `/FloWedding/src/styles.css`.
+
 ## Jalanin
 
 ```bash
