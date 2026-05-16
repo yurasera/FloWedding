@@ -19,7 +19,7 @@ export default function ParallaxLayer({
   const ref = useRef(null);
   const [offset, setOffset] = useState(0);
 
-  const cappedRange = useMemo(() => clampNumber(range, 0, 800), [range]);
+  const cappedRange = useMemo(() => clampNumber(range, 0, 1200), [range]);
 
   useEffect(() => {
     if (reducedMotion) return;

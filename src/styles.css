@@ -186,6 +186,22 @@ code {
   will-change: transform;
 }
 
+.scene-bg {
+  filter: saturate(1.08) contrast(1.02);
+}
+
+.scene-clouds {
+  filter: blur(0.2px);
+}
+
+.scene-glow {
+  opacity: 0.92;
+}
+
+.scene-floral {
+  opacity: 0.98;
+}
+
 .bg-gradient {
   position: absolute;
   inset: 0;
@@ -216,8 +232,8 @@ code {
 
 .cloud {
   position: absolute;
-  color: rgba(255, 255, 255, 0.08);
-  filter: blur(0.3px);
+  color: rgba(255, 255, 255, 0.1);
+  filter: blur(0.1px);
 }
 .cloud.c1 {
   width: 520px;
@@ -228,13 +244,13 @@ code {
   width: 700px;
   right: -170px;
   top: 28%;
-  color: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.075);
 }
 .cloud.c3 {
   width: 460px;
   left: 16%;
   top: 42%;
-  color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.06);
 }
 
 .glow {
@@ -485,12 +501,17 @@ textarea:focus {
 
 .reveal {
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 520ms ease, transform 520ms ease;
+  transform: translateY(18px) scale(0.985);
+  filter: blur(10px);
+  transition: opacity 720ms cubic-bezier(0.2, 0.9, 0.2, 1),
+    transform 720ms cubic-bezier(0.2, 0.9, 0.2, 1),
+    filter 720ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  will-change: opacity, transform, filter;
 }
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  filter: blur(0);
 }
 
 .footer {
