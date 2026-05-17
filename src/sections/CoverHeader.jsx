@@ -44,12 +44,16 @@ export default function CoverHeader({
       const y = ((e.clientY - rect.top) / Math.max(1, rect.height)) * 2 - 1;
       targetX = Math.max(-1, Math.min(1, x));
       targetY = Math.max(-1, Math.min(1, y));
+      el.style.setProperty("--pcx", `${Math.max(0, Math.min(rect.width, e.clientX - rect.left)).toFixed(1)}px`);
+      el.style.setProperty("--pcy", `${Math.max(0, Math.min(rect.height, e.clientY - rect.top)).toFixed(1)}px`);
       if (!raf) raf = window.requestAnimationFrame(update);
     };
 
     const onPointerLeave = () => {
       targetX = 0;
       targetY = 0;
+      el.style.setProperty("--pcx", `50%`);
+      el.style.setProperty("--pcy", `40%`);
       if (!raf) raf = window.requestAnimationFrame(update);
     };
 
@@ -57,6 +61,8 @@ export default function CoverHeader({
     el.addEventListener("pointerleave", onPointerLeave);
     el.style.setProperty("--pmx", "0");
     el.style.setProperty("--pmy", "0");
+    el.style.setProperty("--pcx", "50%");
+    el.style.setProperty("--pcy", "40%");
     return () => {
       el.removeEventListener("pointermove", onPointerMove);
       el.removeEventListener("pointerleave", onPointerLeave);

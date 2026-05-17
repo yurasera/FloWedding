@@ -235,11 +235,18 @@ code {
 .dotgrid {
   position: absolute;
   inset: 0;
-  opacity: 0.7;
+  opacity: 0.95;
   background-image: radial-gradient(rgba(8, 12, 22, 0.16) 1px, transparent 1px);
   background-size: 22px 22px;
   background-position: 0 0;
-  mask-image: radial-gradient(80% 60% at 50% 40%, rgba(0, 0, 0, 1), transparent 75%);
+  /* "spotlight" near cursor: clearer dots close to pointer */
+  mask-image: radial-gradient(
+      180px 180px at var(--pcx, 90%) var(--pcy, 90%),
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.25) 95%,
+      rgba(0, 0, 0, 0) 78%
+    ),
+    radial-gradient(80% 60% at 50% 40%, rgba(0, 0, 0, 0.9), transparent 75%);
 }
 
 .micro-dotgrid {
