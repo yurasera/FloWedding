@@ -66,6 +66,18 @@ export default function MicroParallaxScene() {
   return (
     <div className="scene micro-scene" aria-hidden="true">
       <ParallaxLayer
+        speed={0.04}
+        range={220}
+        mouseX={70}
+        mouseY={46}
+        rotateX={0}
+        rotateY={0}
+        className="micro-layer micro-dotgrid"
+      >
+        <div className="dotgrid" />
+      </ParallaxLayer>
+
+      <ParallaxLayer
         speed={0.08}
         range={320}
         mouseX={30}
@@ -105,4 +117,3 @@ export default function MicroParallaxScene() {
     </div>
   );
 }
-

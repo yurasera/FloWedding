@@ -1,13 +1,13 @@
 export const invitation = {
   couple: {
     groom: {
-      name: "Fulan",
-      short: "Fulan",
+      name: "Satria Lian",
+      short: "Iyan",
       parents: "Putra dari Bpk. ... & Ibu ...",
     },
     bride: {
-      name: "Fulana",
-      short: "Fulana",
+      name: "Anila Zulfiana",
+      short: "Ana",
       parents: "Putri dari Bpk. ... & Ibu ...",
     },
   },

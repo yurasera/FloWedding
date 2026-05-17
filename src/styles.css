@@ -232,6 +232,20 @@ code {
   inset: 0;
 }
 
+.dotgrid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.7;
+  background-image: radial-gradient(rgba(8, 12, 22, 0.16) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: 0 0;
+  mask-image: radial-gradient(80% 60% at 50% 40%, rgba(0, 0, 0, 1), transparent 75%);
+}
+
+.micro-dotgrid {
+  mix-blend-mode: multiply;
+}
+
 .bubble {
   position: absolute;
   border-radius: 999px;
