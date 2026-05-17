@@ -263,18 +263,50 @@ code {
   filter: blur(8px);
 }
 
-.sparkle {
-  position: absolute;
-  transform: translate3d(-50%, -50%, 0);
-}
-
-.sparkle-core {
+/* florals (smaller + more) */
+.floralfield {
   position: absolute;
   inset: 0;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 30%, color-mix(in oklab, #ffffff 60%, hsl(var(--h, 180deg) 85% 60%) 40%), transparent 62%),
-    radial-gradient(circle at 60% 60%, rgba(124, 247, 212, 0.18), transparent 64%);
-  box-shadow: 0 10px 30px rgba(8, 12, 22, 0.08);
+}
+
+.floral-wrap {
+  position: absolute;
+  transform-origin: 0 0;
+  will-change: transform;
+  animation: floralFloat 3.2s ease-in-out infinite alternate;
+  backface-visibility: hidden;
+}
+
+.floral-wrap.right {
+  transform-origin: 100% 0;
+}
+
+.floral-corner {
+  display: block;
+  width: 190px;
+  height: 190px;
+  opacity: 0.92;
+  filter: drop-shadow(0 18px 45px rgba(8, 12, 22, 0.1));
+  backface-visibility: hidden;
+}
+
+.floral-corner.right {
+  transform: scaleX(-1);
+}
+
+@keyframes floralFloat {
+  from {
+    translate: 0 0;
+    rotate: -0.5deg;
+  }
+  to {
+    translate: 0 -18px;
+    rotate: 0.8deg;
+  }
+}
+
+.micro-vignette {
+  background: radial-gradient(90% 70% at 50% 35%, transparent 22%, rgba(8, 12, 22, 0.1) 100%);
 }
 
 .micro-vignette {
