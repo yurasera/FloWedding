@@ -175,12 +175,14 @@ code {
   inset: 0;
   overflow: hidden;
   z-index: 1;
+  perspective: 900px;
 }
 
 .parallax-layer {
   position: absolute;
   inset: -10% -10%;
   will-change: transform;
+  transform-style: preserve-3d;
 }
 
 .scene-bg {
@@ -213,6 +215,49 @@ code {
   inset: 0;
   background: radial-gradient(90% 70% at 50% 35%, transparent 35%, rgba(8, 12, 22, 0.14) 100%);
   pointer-events: none;
+}
+
+/* Micro parallax scene (smaller, more elements) */
+.micro-scene {
+  pointer-events: none;
+}
+
+.micro-layer {
+  inset: -8% -8%;
+}
+
+.bubblefield,
+.sparklefield {
+  position: absolute;
+  inset: 0;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, rgba(124, 247, 212, 0.24), transparent 60%),
+    radial-gradient(circle at 60% 45%, rgba(255, 209, 230, 0.18), transparent 62%),
+    radial-gradient(circle at 50% 60%, rgba(90, 135, 255, 0.12), transparent 65%);
+  transform: translate3d(-50%, -50%, 0);
+  filter: blur(8px);
+}
+
+.sparkle {
+  position: absolute;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.sparkle-core {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, color-mix(in oklab, #ffffff 60%, hsl(var(--h, 180deg) 85% 60%) 40%), transparent 62%),
+    radial-gradient(circle at 60% 60%, rgba(124, 247, 212, 0.18), transparent 64%);
+  box-shadow: 0 10px 30px rgba(8, 12, 22, 0.08);
+}
+
+.micro-vignette {
+  background: radial-gradient(90% 70% at 50% 35%, transparent 25%, rgba(8, 12, 22, 0.12) 100%);
 }
 
 .dotfield {

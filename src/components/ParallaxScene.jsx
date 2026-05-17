@@ -92,22 +92,39 @@ function Floral({ className = "" }) {
 export default function ParallaxScene() {
   return (
     <div className="scene">
-      <ParallaxLayer speed={0.12} range={520} className="scene-bg">
+      <ParallaxLayer speed={0.12} range={520} mouseX={18} mouseY={12} rotateX={2} rotateY={-2} className="scene-bg">
         <div className="bg-gradient" />
         <DotField density={72} />
       </ParallaxLayer>
 
-      <ParallaxLayer speed={0.22} range={560} className="scene-clouds">
+      <ParallaxLayer
+        speed={0.22}
+        range={560}
+        mouseX={34}
+        mouseY={22}
+        rotateX={5}
+        rotateY={-5}
+        className="scene-clouds"
+      >
         <Cloud className="c1" />
         <Cloud className="c2" />
         <Cloud className="c3" />
       </ParallaxLayer>
 
-      <ParallaxLayer speed={0.36} range={520} className="scene-glow">
+      <ParallaxLayer speed={0.36} range={520} mouseX={24} mouseY={16} rotateX={3} rotateY={-3} className="scene-glow">
         <div className="glow" />
       </ParallaxLayer>
 
-      <ParallaxLayer speed={0.52} range={520} className="scene-floral" origin="bottom">
+      <ParallaxLayer
+        speed={0.52}
+        range={520}
+        mouseX={44}
+        mouseY={32}
+        rotateX={7}
+        rotateY={-7}
+        className="scene-floral"
+        origin="bottom"
+      >
         <Floral className="f1" />
       </ParallaxLayer>
 

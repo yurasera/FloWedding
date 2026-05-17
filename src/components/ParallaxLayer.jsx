@@ -10,6 +10,10 @@ function getScrollY() {
 export default function ParallaxLayer({
   speed = 0.25,
   range = 220,
+  mouseX = 0,
+  mouseY = 0,
+  rotateX = 0,
+  rotateY = 0,
   className = "",
   style,
   children,
@@ -50,7 +54,9 @@ export default function ParallaxLayer({
 
   const transform = reducedMotion
     ? undefined
-    : `translate3d(0, ${offset.toFixed(2)}px, 0)`;
+    : `translate3d(calc(var(--pmx, 0) * ${mouseX}px), calc(${offset.toFixed(
+        2
+      )}px + (var(--pmy, 0) * ${mouseY}px)), 0) rotateX(calc(var(--pmy, 0) * ${rotateX}deg)) rotateY(calc(var(--pmx, 0) * ${rotateY}deg))`;
 
   return (
     <div
