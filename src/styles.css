@@ -235,8 +235,8 @@ code {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: min(190px, 92vw);
-  height: min(52svh, 620px);
+  width: min(290px, 92vw);
+  height: min(66svh, 620px);
   z-index: 2;
   pointer-events: none;
   perspective: 900px;
@@ -337,11 +337,21 @@ code {
 }
 
 .scrollhint {
-  margin-top: 22px;
-  color: rgba(8, 12, 22, 0.48);
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.48);
   font-size: 12px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
+}
+
+.scrollhint-bottom {
+  position: absolute;
+  left: 50%;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  margin-top: 0;
+  z-index: 1; /* di bawah cover-door (z-index: 2) */
+  pointer-events: none;
 }
 
 .scene {

@@ -99,9 +99,7 @@ export default function CoverHeader({
       <CloudParallaxScene count={12} seed={2} />
       <CoverDoor opened={opened} />
       <CoverGateway />
-      <div className="cover-content">
-        <div className="container">
-          {!opened ? (
+       {!opened ? (
             <div className="row center cover-open">
               <button className="btn btn-primary" onClick={onOpen}>
                 Buka Undangan
@@ -112,9 +110,12 @@ export default function CoverHeader({
               <h1 className="title">{coupleName}</h1>
             </Reveal>
           )}
-          <div className="scrollhint" aria-hidden>
-            Scroll
-          </div>
+      <div className="scrollhint scrollhint-bottom" aria-hidden>
+        Scroll
+      </div>
+      <div className="cover-content">
+        <div className="container">
+         
         </div>
       </div>
     </header>
