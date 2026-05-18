@@ -3,6 +3,7 @@ import Reveal from "../components/Reveal.jsx";
 import { useEffect, useRef } from "react";
 import doorLeft from "../../assets/images/door-left.png";
 import doorRight from "../../assets/images/door-right.png";
+import gateway from "../../assets/images/gateway.png";
 
 function Pill({ children }) {
   return <span className="pill">{children}</span>;
@@ -21,6 +22,10 @@ function CoverDoor({ opened }) {
       />
     </div>
   );
+}
+
+function CoverGateway() {
+  return <img className="cover-gateway" src={gateway} alt="" aria-hidden="true" />;
 }
 
 export default function CoverHeader({
@@ -91,10 +96,11 @@ export default function CoverHeader({
     <header ref={ref} className={`cover ${opened ? "is-open" : ""}`}>
       <MicroParallaxScene motifs={["sunflower", "sakura", "lotus", "daisy", "peony"]} />
       <CoverDoor opened={opened} />
+      <CoverGateway />
       <div className="cover-content">
         <div className="container">
           {!opened ? (
-            <div className="row center">
+            <div className="row center cover-open">
               <button className="btn btn-primary" onClick={onOpen}>
                 Buka Undangan
               </button>

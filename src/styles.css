@@ -124,22 +124,44 @@ code {
   text-align: center;
 }
 
+.cover-open {
+  position: absolute;
+  left: 50%;
+  bottom: max(8px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: 3;
+  margin-top: 0;
+}
+
 .cover-door {
   position: absolute;
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: min(520px, 92vw);
-  height: min(72svh, 620px);
+  width: min(190px, 92vw);
+  height: min(52svh, 620px);
   z-index: 2;
   pointer-events: none;
   perspective: 900px;
 }
 
+.cover-gateway {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(560px, 94vw);
+  height: auto;
+  z-index: 3; /* di depan pintu */
+  pointer-events: none;
+  user-select: none;
+}
+
 .cover-door__wing {
   position: absolute;
-  top: 8%;
-  bottom: 0;
+  /* inset: 0; */
+  top: 9%;
+  bottom: 6%;
   width: 50%;
   background-size: cover;
   background-position: center;
