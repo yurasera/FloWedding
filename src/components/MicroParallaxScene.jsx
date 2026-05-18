@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import ParallaxLayer from "./ParallaxLayer.jsx";
-import BubbleField from "./microParallax/BubbleField.jsx";
-import FloralGlyph from "./microParallax/FloralGlyph.jsx";
+import BubbleLayer from "./microParallax/BubbleLayer.jsx";
 import createFlorals from "./microParallax/createFlorals.js";
+import DotGridLayer from "./microParallax/DotGridLayer.jsx";
+import FloralLayer from "./microParallax/FloralLayer.jsx";
 
 // MicroParallaxScene = background dekorasi (dotgrid + bubbles + bunga) yang
 // bergerak halus mengikuti scroll. Mouse parallax sengaja hanya dipakai untuk
@@ -10,7 +10,17 @@ import createFlorals from "./microParallax/createFlorals.js";
 // tidak bikin motion berlebihan.
 export default function MicroParallaxScene({
   motifs = ["sunflower", "lavender", "sakura", "lotus", "daisy", "tulip", "rose", "peony"],
+  // Toggle layer untuk memudahkan custom/debug.
+  // Contoh: <MicroParallaxScene layers={{ dotgrid: false, bubbles: true, florals: true }} />
+  layers,
 }) {
+  const enabled = {
+    dotgrid: true,
+    bubbles: false,
+    florals: true,
+    ...layers,
+  };
+
   // ref ke root scene untuk menghitung posisi cursor relatif scene (untuk dotgrid).
   const sceneRef = useRef(null);
   // state CSS vars yang dipakai dotgrid:
@@ -95,79 +105,14 @@ export default function MicroParallaxScene({
         "--pcy": "40%",
       }}
     >
-      {/* DOTGRID: tetap ikut cursor (mouse parallax + spotlight). */}
-      <ParallaxLayer
-        speed={0.04}
-        range={220}
-        mouseX={70}
-        mouseY={46}
-        rotateX={0}
-        rotateY={0}
-        className="micro-layer micro-dotgrid"
-        style={{
-          // CSS vars khusus dotgrid (cursor-driven).
-          "--pmx": dotPointer.pmx,
-          "--pmy": dotPointer.pmy,
-          "--pcx": dotPointer.pcx,
-          "--pcy": dotPointer.pcy,
-        }}
-      >
-        <div
-          className="dotgrid"
-          style={{
-            // Override gaya dotgrid supaya spotlight lebih "hitam bold".
-            backgroundImage: "radial-gradient(rgba(0, 0, 0, 0.26) 1px, transparent 1px)",
-            maskImage:
-              "radial-gradient(220px 220px at var(--pcx, 50%) var(--pcy, 40%), rgba(0,0,0,1) 0%, rgba(0,0,0,0.35) 72%, rgba(0,0,0,0) 88%), radial-gradient(80% 60% at 50% 40%, rgba(0,0,0,0.9), transparent 75%)",
-          }}
-        />
-      </ParallaxLayer>
+      {/* DOTGRID: ikut cursor (mouse parallax + spotlight). */}
+      {enabled.dotgrid ? <DotGridLayer dotPointer={dotPointer} /> : null}
 
       {/* BUBBLES: parallax hanya dari scroll (tidak ikut mouse). */}
-      <ParallaxLayer
-        speed={0.08}
-        range={320}
-        mouseX={30}
-        mouseY={18}
-        rotateX={4}
-        rotateY={-4}
-        className="micro-layer micro-bubbles"
-      >
-        <BubbleField count={20} seed={1} />
-      </ParallaxLayer>
+      {enabled.bubbles ? <BubbleLayer count={20} seed={1} /> : null}
 
       {/* FLORALS: bunga-bunga kecil, parallax scroll + floating animation via CSS. */}
-      <ParallaxLayer
-        speed={0.18}
-        range={340}
-        mouseX={64}
-        mouseY={40}
-        rotateX={8}
-        rotateY={-8}
-        className="micro-layer micro-florals"
-      >
-        <div className="floralfield">
-          {florals.map((f, i) => (
-            <div
-              key={i}
-              className={`floral-wrap ${f.side}`}
-              style={{
-                // Posisi absolut dalam scene (pixel-space).
-                left: f.side === "left" ? `${f.x}px` : undefined,
-                right: f.side === "right" ? `${f.x}px` : undefined,
-                top: `${f.y}px`,
-                opacity: f.o,
-                // Scale/rotate per item untuk variasi tampilan.
-                transform: `scale(${f.s}) rotate(${f.r}deg)`,
-                animationDelay: `${f.delay}s`,
-              }}
-            >
-              {/* SVG glyph per motif (sunflower/lavender/...) */}
-              <FloralGlyph side={f.side} variant={f.variant} motif={f.motif} />
-            </div>
-          ))}
-        </div>
-      </ParallaxLayer>
+      {enabled.florals ? <FloralLayer florals={florals} /> : null}
 
       {/* Vignette overlay biar pinggir scene sedikit gelap/soft. */}
       <div className="scene-vignette micro-vignette" />
