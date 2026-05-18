@@ -376,7 +376,7 @@ code {
 /* Cloud micro-parallax (cover) */
 .cloud-scene {
   pointer-events: none;
-  z-index: 5; /* di depan gateway */
+  z-index: 3; /* di depan gateway */
 }
 
 .cloud-layer {
