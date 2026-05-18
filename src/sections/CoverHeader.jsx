@@ -1,4 +1,5 @@
 import MicroParallaxScene from "../components/MicroParallaxScene.jsx";
+import CloudParallaxScene from "../components/CloudParallaxScene.jsx";
 import Reveal from "../components/Reveal.jsx";
 import { useEffect, useRef } from "react";
 import doorLeft from "../../assets/images/door-left.png";
@@ -95,6 +96,7 @@ export default function CoverHeader({
   return (
     <header ref={ref} className={`cover ${opened ? "is-open" : ""}`}>
       <MicroParallaxScene motifs={["sunflower", "sakura", "lotus", "daisy", "peony"]} />
+      <CloudParallaxScene count={12} seed={2} />
       <CoverDoor opened={opened} />
       <CoverGateway />
       <div className="cover-content">
