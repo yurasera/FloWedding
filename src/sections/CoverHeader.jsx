@@ -1,9 +1,26 @@
 import MicroParallaxScene from "../components/MicroParallaxScene.jsx";
 import Reveal from "../components/Reveal.jsx";
 import { useEffect, useRef } from "react";
+import doorLeft from "../../assets/images/door-left.png";
+import doorRight from "../../assets/images/door-right.png";
 
 function Pill({ children }) {
   return <span className="pill">{children}</span>;
+}
+
+function CoverDoor({ opened }) {
+  return (
+    <div className={`cover-door ${opened ? "is-open" : ""}`} aria-hidden>
+      <div
+        className="cover-door__wing cover-door__wing--left"
+        style={{ backgroundImage: `url(${doorLeft})` }}
+      />
+      <div
+        className="cover-door__wing cover-door__wing--right"
+        style={{ backgroundImage: `url(${doorRight})` }}
+      />
+    </div>
+  );
 }
 
 export default function CoverHeader({
@@ -73,32 +90,20 @@ export default function CoverHeader({
   return (
     <header ref={ref} className={`cover ${opened ? "is-open" : ""}`}>
       <MicroParallaxScene motifs={["sunflower", "sakura", "lotus", "daisy", "peony"]} />
+      <CoverDoor opened={opened} />
       <div className="cover-content">
         <div className="container">
-          <Reveal>
-            <div className="badge">Undangan Pernikahan</div>
-          </Reveal>
-          <Reveal delay={120}>
-            <h1 className="title">{coupleName}</h1>
-          </Reveal>
-          <Reveal delay={220}>
-            <div className="meta">
-              <Pill>{dateText}</Pill>
-              <Pill>{locationName}</Pill>
-            </div>
-          </Reveal>
-          <Reveal delay={320}>
-            <div className="to">
-              Kepada Yth. <span className="to-name">{guestName ? guestName : "Tamu Undangan"}</span>
-            </div>
-          </Reveal>
-          <Reveal delay={420}>
+          {!opened ? (
             <div className="row center">
               <button className="btn btn-primary" onClick={onOpen}>
                 Buka Undangan
               </button>
             </div>
-          </Reveal>
+          ) : (
+            <Reveal>
+              <h1 className="title">{coupleName}</h1>
+            </Reveal>
+          )}
           <div className="scrollhint" aria-hidden>
             Scroll
           </div>
