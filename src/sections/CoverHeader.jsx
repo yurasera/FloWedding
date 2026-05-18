@@ -72,7 +72,7 @@ export default function CoverHeader({
 
   return (
     <header ref={ref} className={`cover ${opened ? "is-open" : ""}`}>
-      <MicroParallaxScene motif="sunflower" />
+      <MicroParallaxScene motifs={["sunflower", "lavender", "sakura", "lotus", "daisy", "tulip", "rose", "peony"]} />
       <div className="cover-content">
         <div className="container">
           <Reveal>
