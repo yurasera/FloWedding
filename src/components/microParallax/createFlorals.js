@@ -23,7 +23,7 @@ export default function createFlorals(motifs) {
     const o = 0.34 + prng01(seed + 17) * 0.5;
     const r = -18 + prng01(seed + 29) * 36;
     const delay = prng01(seed + 71) * 6.2;
-    const variant = variants[(clusterIndex + Math.floor(prng01(seed + 3) * 100)) % variants.length];
+    const variant = variants[0];
     items.push({ side, x, y, s, o, r: side === "right" ? -r : r, delay, variant, motif });
     placed[side].push({ x, y });
   };
