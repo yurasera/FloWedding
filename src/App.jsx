@@ -38,38 +38,59 @@ export default function App() {
   }, [coupleName]);
 
   return (
-    <div className="app" id="top">
-      <CoverHeader
-        opened={opened}
-        coupleName={coupleName}
-        dateText={dateText}
-        locationName={invitation.event.locationName}
-        guestName={guestName}
-        onOpen={() => setOpened(true)}
-      />
-
-      <main className={`content ${opened ? "is-open" : ""}`}>
-        <TopNav coupleName={coupleName} />
-        <CoupleSection invitation={invitation} guestName={guestName} start={start} />
-        <EventSection invitation={invitation} start={start} onOpenCalendar={() => setOpenCalendar(true)} />
-        <StorySection story={invitation.story} />
-        <RsvpSection invitation={invitation} coupleName={coupleName} dateText={dateText} />
-        <Footer coupleName={coupleName} />
-      </main>
-
-      <Modal open={openCalendar} title="Simpan ke Kalender" onClose={() => setOpenCalendar(false)}>
-        <div className="text">
-          Unduh file kalender (.ics) lalu buka dengan aplikasi kalender Anda.
+    <div className="layout" id="top">
+      <aside className="layout-left" aria-hidden="true">
+        <div className="layout-left__inner">
+          <div className="layout-left__label">Wedding Invitation</div>
+          <div className="layout-left__names">
+            <div className="layout-left__name">{invitation.couple.groom.name}</div>
+            <div className="layout-left__amp">&amp;</div>
+            <div className="layout-left__name">{invitation.couple.bride.name}</div>
+          </div>
         </div>
-        <div className="row" style={{ marginTop: 12 }}>
-          <button className="btn btn-primary" onClick={onDownloadICS}>
-            Download .ics
-          </button>
-          <button className="btn" onClick={() => setOpenCalendar(false)}>
-            Tutup
-          </button>
+      </aside>
+
+      <div className="layout-right">
+        <div className="layout-phone">
+          <div className="app">
+            <CoverHeader
+              opened={opened}
+              coupleName={coupleName}
+              dateText={dateText}
+              locationName={invitation.event.locationName}
+              guestName={guestName}
+              onOpen={() => setOpened(true)}
+            />
+
+            <main className={`content ${opened ? "is-open" : ""}`}>
+              <TopNav coupleName={coupleName} />
+              <CoupleSection invitation={invitation} guestName={guestName} start={start} />
+              <EventSection
+                invitation={invitation}
+                start={start}
+                onOpenCalendar={() => setOpenCalendar(true)}
+              />
+              <StorySection story={invitation.story} />
+              <RsvpSection invitation={invitation} coupleName={coupleName} dateText={dateText} />
+              <Footer coupleName={coupleName} />
+            </main>
+
+            <Modal open={openCalendar} title="Simpan ke Kalender" onClose={() => setOpenCalendar(false)}>
+              <div className="text">
+                Unduh file kalender (.ics) lalu buka dengan aplikasi kalender Anda.
+              </div>
+              <div className="row" style={{ marginTop: 12 }}>
+                <button className="btn btn-primary" onClick={onDownloadICS}>
+                  Download .ics
+                </button>
+                <button className="btn" onClick={() => setOpenCalendar(false)}>
+                  Tutup
+                </button>
+              </div>
+            </Modal>
+          </div>
         </div>
-      </Modal>
+      </div>
     </div>
   );
 }
