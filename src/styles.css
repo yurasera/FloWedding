@@ -247,7 +247,7 @@ code {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: min(560px, 94vw);
+  width: min(560px, 134vw);
   height: auto;
   z-index: 3; /* di depan pintu */
   pointer-events: none;
