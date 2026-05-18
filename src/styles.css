@@ -236,7 +236,7 @@ code {
   bottom: 0;
   transform: translateX(-50%);
   width: min(290px, 92vw);
-  height: min(66svh, 620px);
+  height: min(67svh, 620px);
   z-index: 2;
   pointer-events: none;
   perspective: 900px;
@@ -338,7 +338,7 @@ code {
 
 .scrollhint {
   margin-top: 2px;
-  color: rgba(255, 255, 255, 0.48);
+  color: rgba(33, 33, 33, 0.48);
   font-size: 12px;
   letter-spacing: 0.28em;
   text-transform: uppercase;

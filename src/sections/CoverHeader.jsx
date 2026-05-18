@@ -43,6 +43,30 @@ export default function CoverHeader({
     const el = ref.current;
     if (!el) return;
 
+    const scroller = el.closest(".layout-phone") ?? el.closest(".app") ?? el.parentElement;
+    if (!scroller) return;
+
+    const prevOverflow = scroller.style.overflow;
+    const prevOverscroll = scroller.style.overscrollBehavior;
+    const prevTouchAction = scroller.style.touchAction;
+
+    if (!opened) {
+      scroller.style.overflow = "hidden";
+      scroller.style.overscrollBehavior = "none";
+      scroller.style.touchAction = "none";
+    }
+
+    return () => {
+      scroller.style.overflow = prevOverflow;
+      scroller.style.overscrollBehavior = prevOverscroll;
+      scroller.style.touchAction = prevTouchAction;
+    };
+  }, [opened]);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
     let raf = 0;
     let targetX = 0;
     let targetY = 0;
