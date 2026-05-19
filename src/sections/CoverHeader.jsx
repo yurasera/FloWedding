@@ -29,6 +29,35 @@ function CoverGateway() {
   return <img className="cover-gateway" src={gateway} alt="" aria-hidden="true" />;
 }
 
+function FrontFlorals() {
+  const modules = import.meta.glob("../../assets/images/florals/*.{png,jpg,jpeg,webp,svg}", {
+    eager: true,
+    query: "?url",
+    import: "default",
+  });
+  const urls = Object.keys(modules)
+    .sort((a, b) => a.localeCompare(b))
+    .map((k) => modules[k]);
+
+  return (
+    <div className="front-florals" aria-hidden="true">
+      {urls.map((src, i) => (
+        <img
+          key={src}
+          className="front-floral"
+          src={src}
+          alt=""
+          style={{
+            "--ff-x": `${(i % 5) * 20}%`,
+            "--ff-s": (0.78 + (i % 7) * 0.06).toFixed(2),
+            "--ff-d": `${(i * 0.22).toFixed(2)}s`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 export default function CoverHeader({
   opened,
   coupleName,
@@ -126,6 +155,7 @@ export default function CoverHeader({
       <CloudParallaxScene count={12} seed={2} />
       <CoverDoor opened={opened} />
       <CoverGateway />
+      <FrontFlorals />
        {!opened ? (
             <div className="row center cover-open">
               <button className="btn btn-primary" onClick={onOpen}>

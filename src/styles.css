@@ -61,7 +61,7 @@ code {
 
 .btn {
   border: 1px solid var(--stroke);
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.9);
   color: var(--text);
   padding: 10px 14px;
   border-radius: 999px;
@@ -83,7 +83,7 @@ code {
 
 .btn-primary {
   border-color: rgba(90, 135, 255, 0.32);
-  background: linear-gradient(135deg, rgba(124, 247, 212, 0.28), rgba(255, 209, 230, 0.22));
+  background: linear-gradient(135deg, rgba(124, 247, 212, 0.68), rgba(255, 209, 230, 0.62));
 }
 
 .pill {
@@ -252,6 +252,38 @@ code {
   z-index: 10; /* di depan pintu + sparkles */
   pointer-events: none;
   user-select: none;
+}
+
+.front-florals {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: min(40svh, 420px);
+  z-index: 11; /* paling depan gateway */
+  pointer-events: none;
+}
+
+.front-floral {
+  position: absolute;
+  bottom: calc(-10px + env(safe-area-inset-bottom));
+  left: var(--ff-x, 50%);
+  transform: translateX(-50%) scale(var(--ff-s, 1));
+  width: min(260px, 48vw);
+  height: auto;
+  filter: drop-shadow(0 24px 60px rgba(8, 12, 22, 0.16));
+  animation: frontFloralFloat 3.8s ease-in-out infinite alternate;
+  animation-delay: var(--ff-d, 0s);
+  will-change: transform;
+}
+
+@keyframes frontFloralFloat {
+  from {
+    transform: translateX(-50%) translateY(0px) scale(var(--ff-s, 1));
+  }
+  to {
+    transform: translateX(-50%) translateY(-14px) scale(var(--ff-s, 1));
+  }
 }
 
 .cover-door__wing {
