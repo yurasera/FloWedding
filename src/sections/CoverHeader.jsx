@@ -165,7 +165,7 @@ export default function CoverHeader({
     <header ref={ref} className={`cover ${opened ? "is-open" : ""}`}>
       <img className="cover-indoor-bg" src={indoor} alt="" aria-hidden="true" />
       <MicroParallaxScene
-        motifs={["ivy", "sunflower", "sakura", "lotus", "daisy", "peony"]}
+        motifs={["ivy", "sakura", "lotus", "daisy", "peony"]}
         layers={{ sparkles: true }}
       />
       <CloudParallaxScene count={12} seed={2} />

@@ -321,7 +321,7 @@ export default function createFlorals(motifs) {
             // Clamp flower position
             x = Math.max(
               22,
-              Math.min(312, x)
+              Math.min(12, x)
             );
 
             y = Math.max(
