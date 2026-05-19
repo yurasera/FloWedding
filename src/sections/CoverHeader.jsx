@@ -6,6 +6,7 @@ import doorLeft from "../../assets/images/door-left.png";
 import doorRight from "../../assets/images/door-right.png";
 import gateway from "../../assets/images/gateway.png";
 import indoor from "../../assets/images/indoor.png";
+import coinAi from "../../assets/images/coin-ai.png";
 
 function Pill({ children, className = "" }) {
   return <span className={`pill ${className}`.trim()}>{children}</span>;
@@ -269,7 +270,7 @@ export default function CoverHeader({
             ) : null}
           </div>
           <Reveal className="cover-title-open">
-            <h1 className="title">AI</h1>
+            <img className="coin-img" src={coinAi} alt="" aria-hidden="true" />
           </Reveal>
         </>
       )}
