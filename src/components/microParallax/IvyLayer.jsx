@@ -92,13 +92,16 @@ export default function IvyLayer() {
     <ParallaxLayer speed={0.08} range={220} mouseX={22} mouseY={14} rotateX={0} rotateY={0} className="micro-layer micro-ivy">
       <div className="ivy-corners" aria-hidden="true">
         {makeInstances("left", -10)}
-        {makeInstances("left", 5)}
         {makeInstances("left", 10)}
         {makeInstances("left", 20)}
+        {makeInstances("left", 28)}
+        {makeInstances("left", 60)}
         {makeInstances("right", -10)}
         {makeInstances("right", 5)}
         {makeInstances("right", 10)}
         {makeInstances("right", 20)}
+        {makeInstances("right", 48)}
+        {makeInstances("right", 55)}
       </div>
     </ParallaxLayer>
   );
