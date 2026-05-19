@@ -64,7 +64,7 @@ export default function createFlorals(motifs) {
       : ["sunflower"];
 
     // Tambah cluster supaya penuh atas-bawah
-    const clustersPerMotif = 1;
+    const clustersPerMotif = 2;
 
     const flowersPerCluster = 3;
 

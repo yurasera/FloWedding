@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import BubbleLayer from "./microParallax/BubbleLayer.jsx";
 import createFlorals from "./microParallax/createFlorals.js";
 import DotGridLayer from "./microParallax/DotGridLayer.jsx";
 import FloralLayer from "./microParallax/FloralLayer.jsx";
+import IvyLayer from "./microParallax/IvyLayer.jsx";
+import SparkleLayer from "./microParallax/SparkleLayer.jsx";
 
 // MicroParallaxScene = background dekorasi (dotgrid + bubbles + bunga) yang
 // bergerak halus mengikuti scroll. Mouse parallax sengaja hanya dipakai untuk
@@ -14,10 +15,23 @@ export default function MicroParallaxScene({
   // Contoh: <MicroParallaxScene layers={{ dotgrid: false, bubbles: true, florals: true }} />
   layers,
 }) {
+  const sparklesConfig =
+    layers?.sparkles && typeof layers.sparkles === "object"
+      ? layers.sparkles
+      : null;
+  const sparklesCount =
+    typeof layers?.sparkles === "number"
+      ? layers.sparkles
+      : typeof sparklesConfig?.count === "number"
+        ? sparklesConfig.count
+        : 92;
+  const sparklesSeed = typeof sparklesConfig?.seed === "number" ? sparklesConfig.seed : 2;
+
   const enabled = {
     dotgrid: true,
-    bubbles: false,
+    sparkles: true,
     florals: true,
+    ivy: motifs.includes("ivy"),
     ...layers,
   };
 
@@ -108,8 +122,11 @@ export default function MicroParallaxScene({
       {/* DOTGRID: ikut cursor (mouse parallax + spotlight). */}
       {enabled.dotgrid ? <DotGridLayer dotPointer={dotPointer} /> : null}
 
-      {/* BUBBLES: parallax hanya dari scroll (tidak ikut mouse). */}
-      {enabled.bubbles ? <BubbleLayer count={20} seed={1} /> : null}
+      {/* SPARKLES: bintik cahaya kedap-kedip, ikut scroll + sedikit mouse. */}
+      {enabled.sparkles ? <SparkleLayer count={sparklesCount} seed={sparklesSeed} /> : null}
+
+      {/* IVY: tanaman ivy di pojok kiri/kanan (parallax scroll + sway). */}
+      {enabled.ivy ? <IvyLayer /> : null}
 
       {/* FLORALS: bunga-bunga kecil, parallax scroll + floating animation via CSS. */}
       {enabled.florals ? <FloralLayer florals={florals} /> : null}

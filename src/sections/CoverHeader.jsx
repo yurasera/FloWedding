@@ -119,7 +119,10 @@ export default function CoverHeader({
 
   return (
     <header ref={ref} className={`cover ${opened ? "is-open" : ""}`}>
-      <MicroParallaxScene motifs={["sunflower", "sakura", "lotus", "daisy", "peony"]} />
+      <MicroParallaxScene
+        motifs={["ivy", "sunflower", "sakura", "lotus", "daisy", "peony"]}
+        layers={{ sparkles: true }}
+      />
       <CloudParallaxScene count={12} seed={2} />
       <CoverDoor opened={opened} />
       <CoverGateway />
