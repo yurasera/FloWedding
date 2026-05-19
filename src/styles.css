@@ -259,7 +259,7 @@ code {
   left: 0;
   right: 0;
   bottom: 0;
-  height: min(40svh, 420px);
+  height: min(10svh, 120px);
   z-index: 11; /* paling depan gateway */
   pointer-events: none;
 }
@@ -268,8 +268,9 @@ code {
   position: absolute;
   bottom: calc(-10px + env(safe-area-inset-bottom));
   left: var(--ff-x, 50%);
-  transform: translateX(-50%) scale(var(--ff-s, 1));
-  width: min(260px, 48vw);
+  transform: translateX(-50%) translateY(var(--ff-y, 0px)) rotate(var(--ff-r, 0deg))
+    scale(var(--ff-s, 1));
+  width: min(80px, 48vw);
   height: auto;
   filter: drop-shadow(0 24px 60px rgba(8, 12, 22, 0.16));
   animation: frontFloralFloat 3.8s ease-in-out infinite alternate;
@@ -279,10 +280,12 @@ code {
 
 @keyframes frontFloralFloat {
   from {
-    transform: translateX(-50%) translateY(0px) scale(var(--ff-s, 1));
+    transform: translateX(-50%) translateY(calc(var(--ff-y, 0px) + 0px)) rotate(var(--ff-r, 0deg))
+      scale(var(--ff-s, 1));
   }
   to {
-    transform: translateX(-50%) translateY(-14px) scale(var(--ff-s, 1));
+    transform: translateX(-50%) translateY(calc(var(--ff-y, 0px) + -14px)) rotate(var(--ff-r, 0deg))
+      scale(var(--ff-s, 1));
   }
 }
 
