@@ -227,7 +227,7 @@ code {
 }
 
 .cover.is-open {
-  min-height: 76svh;
+  min-height: 100svh;
 }
 
 .cover-content {
