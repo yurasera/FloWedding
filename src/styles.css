@@ -239,6 +239,10 @@ code {
   text-align: center;
 }
 
+.cover-title-open {
+  margin-top: 70%;
+}
+
 .cover-open {
   position: absolute;
   left: 50%;

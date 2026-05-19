@@ -253,16 +253,32 @@ export default function CoverHeader({
           </div>
         </>
       ) : (
-        <Reveal>
-          <h1 className="title">{coupleName}</h1>
-        </Reveal>
+        <>
+          <div className="cover-intro">
+            <span className="cover-intro__label">The Wedding Of</span>
+            <h1 className="title">{coupleName}</h1>
+            <div className="meta" aria-label="Tanggal dan tamu">
+              {formattedDateText ? (
+                <Pill className="pill--date">{formattedDateText}</Pill>
+              ) : null}
+            </div>
+            {guestName ? (
+              <div className="meta" aria-label="Nama tamu">
+                <Pill>Kepada Yth. {guestName}</Pill>
+              </div>
+            ) : null}
+          </div>
+          <Reveal className="cover-title-open">
+            <h1 className="title">AI</h1>
+          </Reveal>
+        </>
       )}
       <div className="scrollhint scrollhint-bottom" aria-hidden>
         Scroll
       </div>
       <div className="cover-content">
         <div className="container">
-         
+
         </div>
       </div>
     </header>
