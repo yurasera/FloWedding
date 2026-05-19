@@ -224,7 +224,7 @@ code {
 .cover-open {
   position: absolute;
   left: 50%;
-  bottom: max(58px, env(safe-area-inset-bottom));
+  bottom: max(98px, env(safe-area-inset-bottom));
   transform: translateX(-50%);
   z-index: 12; /* di atas semua elemen cover */
   margin-top: 0;
