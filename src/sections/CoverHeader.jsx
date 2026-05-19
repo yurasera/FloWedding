@@ -171,7 +171,7 @@ export default function CoverHeader({
       <CloudParallaxScene count={12} seed={2} />
       <CoverDoor opened={opened} />
       <CoverGateway />
-      <div className="front-florals" aria-hidden="true">
+      <div className={`front-florals ${opened ? "is-exit" : ""}`} aria-hidden="true">
         {[
           { name: "mawar", x: "10%", y: "10px", rotation: "18deg", scale: 1.96, delay: "0.10s" },
           { name: "mawar", x: "0%", y: "-50px", rotation: "18deg", scale: 0.66, delay: "0.00s" },
