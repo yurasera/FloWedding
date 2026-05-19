@@ -57,6 +57,7 @@ export default function App() {
               opened={opened}
               coupleName={coupleName}
               dateText={dateText}
+              startISO={invitation.event.startISO}
               locationName={invitation.event.locationName}
               guestName={guestName}
               onOpen={() => setOpened(true)}

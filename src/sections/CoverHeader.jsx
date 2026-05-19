@@ -7,8 +7,8 @@ import doorRight from "../../assets/images/door-right.png";
 import gateway from "../../assets/images/gateway.png";
 import indoor from "../../assets/images/indoor.png";
 
-function Pill({ children }) {
-  return <span className="pill">{children}</span>;
+function Pill({ children, className = "" }) {
+  return <span className={`pill ${className}`.trim()}>{children}</span>;
 }
 
 function CoverDoor({ opened }) {
@@ -77,11 +77,32 @@ export default function CoverHeader({
   opened,
   coupleName,
   dateText,
+  startISO,
   locationName,
   guestName,
   onOpen,
 }) {
   const ref = useRef(null);
+
+  const formattedDateText = (() => {
+    const raw = (startISO ?? dateText) ? String(startISO ?? dateText).trim() : "";
+    if (!raw) return "";
+
+    // Prefer ISO date part to avoid timezone shifting (e.g. +07:00 -> previous day in some locales).
+    const isoDate = raw.includes("T") ? raw.split("T")[0] : raw;
+    const match = isoDate.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (match) {
+      const [, yyyy, mm, dd] = match;
+      return `${dd}.${mm}.${yyyy.slice(-2)}`;
+    }
+
+    const parsed = new Date(raw);
+    if (Number.isNaN(parsed.getTime())) return raw;
+    const dd = String(parsed.getDate()).padStart(2, "0");
+    const mm = String(parsed.getMonth() + 1).padStart(2, "0");
+    const yy = String(parsed.getFullYear()).slice(-2);
+    return `${dd} . ${mm} . ${yy}`;
+  })();
 
   useEffect(() => {
     const el = ref.current;
@@ -215,9 +236,15 @@ export default function CoverHeader({
             <span className="cover-intro__label">The Wedding Of</span>
             <h1 className="title">{coupleName}</h1>
             <div className="meta" aria-label="Tanggal dan tamu">
-              {dateText ? <Pill>{dateText}</Pill> : null}
-              {guestName ? <Pill>Kepada Yth. {guestName}</Pill> : null}
+              {formattedDateText ? (
+                <Pill className="pill--date">{formattedDateText}</Pill>
+              ) : null}
             </div>
+            {guestName ? (
+              <div className="meta" aria-label="Nama tamu">
+                <Pill>Kepada Yth. {guestName}</Pill>
+              </div>
+            ) : null}
           </div>
           <div className="row center cover-open">
             <button className="btn btn-primary" onClick={onOpen}>

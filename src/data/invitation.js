@@ -13,7 +13,7 @@ export const invitation = {
   },
   event: {
     // Format ISO 8601; ganti ke tanggal & jam acara utama
-    startISO: "2026-08-08T09:00:00+07:00",
+    startISO: "2026-06-02T09:00:00+07:00",
     timezoneLabel: "WIB",
     locationName: "Gedung Serbaguna",
     locationAddress: "Jl. Contoh No. 123, Kota",
