@@ -212,7 +212,7 @@ export default function CoverHeader({
       {!opened ? (
         <>
           <div className="cover-intro">
-            <span className="">The Wedding Of</span>
+            <span className="cover-intro__label">The Wedding Of</span>
             <h1 className="title">{coupleName}</h1>
             <div className="meta" aria-label="Tanggal dan tamu">
               {dateText ? <Pill>{dateText}</Pill> : null}
