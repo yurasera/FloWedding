@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import doorLeft from "../../assets/images/door-left.png";
 import doorRight from "../../assets/images/door-right.png";
 import gateway from "../../assets/images/gateway.png";
+import indoor from "../../assets/images/indoor.png";
 
 function Pill({ children }) {
   return <span className="pill">{children}</span>;
@@ -162,6 +163,7 @@ export default function CoverHeader({
 
   return (
     <header ref={ref} className={`cover ${opened ? "is-open" : ""}`}>
+      <img className="cover-indoor-bg" src={indoor} alt="" aria-hidden="true" />
       <MicroParallaxScene
         motifs={["ivy", "sunflower", "sakura", "lotus", "daisy", "peony"]}
         layers={{ sparkles: true }}
