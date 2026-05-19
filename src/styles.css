@@ -89,12 +89,9 @@ code {
 .pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
+  padding: 4px 8px;
   border-radius: 999px;
-  border: 1px solid rgba(8, 12, 22, 0.12);
-  background: rgba(255, 255, 255, 0.62);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
 }
 
 .muted {
@@ -244,6 +241,46 @@ code {
   transform: translateX(-50%);
   z-index: 12; /* di atas semua elemen cover */
   margin-top: 0;
+}
+
+.cover-intro {
+  position: absolute;
+  left: 50%;
+  top: max(34px, env(safe-area-inset-top));
+  transform: translateX(-50%);
+  width: min(520px, calc(100% - 32px));
+  text-align: center;
+  z-index: 12; /* di atas gateway/florals */
+  pointer-events: none;
+}
+
+.cover-intro .badge {
+  font-family: "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 7px 13px;
+}
+
+.cover-intro .title {
+  font-family: "Great Vibes", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-size: clamp(34px, 6vw, 56px);
+  margin: 10px 0 8px;
+  letter-spacing: 0;
+  line-height: 1.04;
+}
+
+.cover-intro .pill {
+  font-family: "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.cover-intro .meta {
+  margin-top: 8px;
 }
 
 .cover-door {

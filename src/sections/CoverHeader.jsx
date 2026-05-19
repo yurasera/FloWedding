@@ -209,17 +209,27 @@ export default function CoverHeader({
           />
         ))}
       </div>
-       {!opened ? (
-            <div className="row center cover-open">
-              <button className="btn btn-primary" onClick={onOpen}>
-                Buka Undangan
-              </button>
+      {!opened ? (
+        <>
+          <div className="cover-intro">
+            <span className="">The Wedding Of</span>
+            <h1 className="title">{coupleName}</h1>
+            <div className="meta" aria-label="Tanggal dan tamu">
+              {dateText ? <Pill>{dateText}</Pill> : null}
+              {guestName ? <Pill>Kepada Yth. {guestName}</Pill> : null}
             </div>
-          ) : (
-            <Reveal>
-              <h1 className="title">{coupleName}</h1>
-            </Reveal>
-          )}
+          </div>
+          <div className="row center cover-open">
+            <button className="btn btn-primary" onClick={onOpen}>
+              Buka Undangan
+            </button>
+          </div>
+        </>
+      ) : (
+        <Reveal>
+          <h1 className="title">{coupleName}</h1>
+        </Reveal>
+      )}
       <div className="scrollhint scrollhint-bottom" aria-hidden>
         Scroll
       </div>
