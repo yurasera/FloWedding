@@ -197,17 +197,15 @@ export default function CoverHeader({
       <img className="cover-stairway" src={stairway} alt="" aria-hidden="true" />
       <div className={`front-florals ${opened ? "is-exit" : ""}`} aria-hidden="true">
         {[
-          { name: "teratai4", x: "4%", y: "7px", rotation: "4deg", scale: 0.98, delay: "0.78s" },
-          { name: "teratai3", x: "12%", y: "-1px", rotation: "-3deg", scale: 1.0, delay: "0.84s" },
-          { name: "teratai4", x: "8%", y: "26px", rotation: "3deg", scale: 1.02, delay: "0.90s" },
-          { name: "teratai", x: "10%", y: "28px", rotation: "-6deg", scale: 0.74, delay: "0.12s" },
-          { name: "mawar", x: "16%", y: "36px", rotation: "4deg", scale: 0.76, delay: "0.18s" },
-          { name: "teratai4", x: "76%", y: "27px", rotation: "4deg", scale: 0.98, delay: "0.78s" },
-          { name: "teratai3", x: "82%", y: "-1px", rotation: "-3deg", scale: 1.0, delay: "0.84s" },
-          { name: "teratai4", x: "88%", y: "26px", rotation: "3deg", scale: 1.02, delay: "0.90s" },
-          { name: "teratai", x: "94%", y: "-38px", rotation: "-6deg", scale: 0.74, delay: "0.12s" },
-          { name: "mawar", x: "94%", y: "12px", rotation: "-8deg", scale: 0.84, delay: "0.96s" },
+          { name: "teratai", x: "2%", y: "-10px", rotation: "-6deg", scale: 0.74, delay: "0.12s" },
+          { name: "teratai3", x: "8%", y: "-10px", rotation: "-3deg", scale: 0.70, delay: "0.84s" },
+          { name: "teratai4", x: "4%", y: "17px", rotation: "4deg", scale: 0.98, delay: "0.78s" },
+          { name: "teratai4", x: "12%", y: "30px", rotation: "3deg", scale: 0.82, delay: "0.90s" },
           { name: "mawar", x: "102%", y: "28px", rotation: "-14deg", scale: 0.78, delay: "1.02s" },
+          { name: "teratai", x: "98%", y: "-18px", rotation: "-6deg", scale: 0.74, delay: "0.12s" },
+          { name: "teratai4", x: "86%", y: "27px", rotation: "6deg", scale: 0.98, delay: "0.78s" },
+          { name: "teratai3", x: "92%", y: "-1px", rotation: "-3deg", scale: 0.70, delay: "0.84s" },
+          { name: "teratai4", x: "98%", y: "26px", rotation: "-9deg", scale: 0.82, delay: "0.90s" },
         ].map((f, i) => (
           <FrontFloral
             key={`${f.name}-${i}`}
