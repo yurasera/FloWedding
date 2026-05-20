@@ -363,13 +363,27 @@ code {
   position: absolute;
   left: 50%;
   bottom: 0;
+
   transform: translateX(-50%);
+  transform-origin: center bottom;
+
   width: min(563px, 138vw);
   height: auto;
+
   z-index: 10;
   /* di depan pintu + sparkles */
+
   pointer-events: none;
   user-select: none;
+  transition:
+    transform 12000ms cubic-bezier(0.03, 0.88, 0.08, 1);
+
+  will-change: transform;
+}
+
+.cover.is-open .cover-gateway {
+  transform:
+    translateX(-50%) translateY(80px) scale(1.92);
 }
 
 .cover-stairway {
