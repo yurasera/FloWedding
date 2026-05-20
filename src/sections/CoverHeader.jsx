@@ -197,30 +197,17 @@ export default function CoverHeader({
       <img className="cover-stairway" src={stairway} alt="" aria-hidden="true" />
       <div className={`front-florals ${opened ? "is-exit" : ""}`} aria-hidden="true">
         {[
-          { name: "mawar", x: "10%", y: "10px", rotation: "18deg", scale: 1.96, delay: "0.10s" },
-          { name: "mawar", x: "0%", y: "-50px", rotation: "18deg", scale: 0.66, delay: "0.00s" },
-          { name: "mawar", x: "10%", y: "-50px", rotation: "18deg", scale: 0.66, delay: "0.00s" },
-          { name: "mawar", x: "4%", y: "-70px", rotation: "8deg", scale: 0.7, delay: "0.06s" },
-          { name: "teratai", x: "10%", y: "18px", rotation: "-6deg", scale: 0.74, delay: "0.12s" },
-          { name: "mawar", x: "16%", y: "14px", rotation: "4deg", scale: 0.76, delay: "0.18s" },
-          { name: "mawar", x: "82%", y: "8px", rotation: "-14deg", scale: 1.98, delay: "1.02s" },
-          { name: "teratai2", x: "12%", y: "0px", rotation: "-8deg", scale: 1.78, delay: "0.24s" },
-          { name: "teratai", x: "28%", y: "22px", rotation: "6deg", scale: 0.82, delay: "0.30s" },
-          { name: "mawar", x: "37%", y: "5px", rotation: "-4deg", scale: 0.68, delay: "0.32s" },
-          { name: "mawar", x: "52%", y: "-5px", rotation: "-14deg", scale: 0.68, delay: "0.32s" },
-          { name: "teratai3", x: "34%", y: "24px", rotation: "-10deg", scale: 0.84, delay: "0.36s" },
-          { name: "teratai2", x: "90%", y: "-40px", rotation: "5deg", scale: 1.86, delay: "1.42s" },
-          { name: "teratai4", x: "46%", y: "22px", rotation: "-7deg", scale: 0.88, delay: "1.48s" },
-          { name: "teratai3", x: "52%", y: "29px", rotation: "7deg", scale: 0.9, delay: "1.54s" },
-          { name: "teratai2", x: "58%", y: "21px", rotation: "-5deg", scale: 0.92, delay: "0.60s" },
-          { name: "teratai4", x: "64%", y: "28px", rotation: "6deg", scale: 0.94, delay: "0.66s" },
-          { name: "teratai3", x: "70%", y: "20px", rotation: "-4deg", scale: 0.96, delay: "0.72s" },
-          { name: "teratai4", x: "76%", y: "17px", rotation: "4deg", scale: 0.98, delay: "0.78s" },
+          { name: "teratai4", x: "4%", y: "7px", rotation: "4deg", scale: 0.98, delay: "0.78s" },
+          { name: "teratai3", x: "12%", y: "-1px", rotation: "-3deg", scale: 1.0, delay: "0.84s" },
+          { name: "teratai4", x: "8%", y: "26px", rotation: "3deg", scale: 1.02, delay: "0.90s" },
+          { name: "teratai", x: "10%", y: "28px", rotation: "-6deg", scale: 0.74, delay: "0.12s" },
+          { name: "mawar", x: "16%", y: "36px", rotation: "4deg", scale: 0.76, delay: "0.18s" },
+          { name: "teratai4", x: "76%", y: "27px", rotation: "4deg", scale: 0.98, delay: "0.78s" },
           { name: "teratai3", x: "82%", y: "-1px", rotation: "-3deg", scale: 1.0, delay: "0.84s" },
-          { name: "teratai4", x: "88%", y: "6px", rotation: "3deg", scale: 1.02, delay: "0.90s" },
+          { name: "teratai4", x: "88%", y: "26px", rotation: "3deg", scale: 1.02, delay: "0.90s" },
           { name: "teratai", x: "94%", y: "-38px", rotation: "-6deg", scale: 0.74, delay: "0.12s" },
           { name: "mawar", x: "94%", y: "12px", rotation: "-8deg", scale: 0.84, delay: "0.96s" },
-          { name: "mawar", x: "102%", y: "8px", rotation: "-14deg", scale: 0.78, delay: "1.02s" },
+          { name: "mawar", x: "102%", y: "28px", rotation: "-14deg", scale: 0.78, delay: "1.02s" },
         ].map((f, i) => (
           <FrontFloral
             key={`${f.name}-${i}`}
