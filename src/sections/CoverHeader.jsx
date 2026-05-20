@@ -7,6 +7,7 @@ import doorRight from "../../assets/images/door-right.png";
 import gateway from "../../assets/images/gateway.png";
 import indoor from "../../assets/images/indoor.png";
 import coinAi from "../../assets/images/coin-ai.png";
+import stairway from "../../assets/images/stairway.png";
 
 function Pill({ children, className = "" }) {
   return <span className={`pill ${className}`.trim()}>{children}</span>;
@@ -193,6 +194,7 @@ export default function CoverHeader({
       <CloudParallaxScene count={12} seed={2} />
       <CoverDoor opened={opened} />
       <CoverGateway />
+      <img className="cover-stairway" src={stairway} alt="" aria-hidden="true" />
       <div className={`front-florals ${opened ? "is-exit" : ""}`} aria-hidden="true">
         {[
           { name: "mawar", x: "10%", y: "10px", rotation: "18deg", scale: 1.96, delay: "0.10s" },

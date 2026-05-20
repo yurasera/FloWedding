@@ -363,6 +363,19 @@ code {
   user-select: none;
 }
 
+.cover-stairway {
+  position: absolute;
+  left: 50%;
+  bottom: -15%;
+  transform: translateX(-50%);
+  width: min(520px, 128vw);
+  height: auto;
+  z-index: 10; /* belakang front-florals (11), depan pintu (9) */
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.92;
+}
+
 .front-florals {
   position: absolute;
   left: 0;
