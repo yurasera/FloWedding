@@ -230,9 +230,10 @@ export default function CoverHeader({
                 <Pill className="pill--date">{formattedDateText}</Pill>
               ) : null}
             </div>
+            <Pill>Kepada Yth.</Pill>
             {guestName ? (
               <div className="meta" aria-label="Nama tamu">
-                <Pill>Kepada Yth. {guestName}</Pill>
+                <Pill>{guestName}</Pill>
               </div>
             ) : null}
           </div>

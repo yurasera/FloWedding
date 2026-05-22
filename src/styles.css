@@ -306,7 +306,7 @@ code {
 .cover-intro {
   position: absolute;
   left: 50%;
-  top: max(34px, env(safe-area-inset-top));
+  top: max(134px, env(safe-area-inset-top));
   transform: translateX(-50%);
   width: min(520px, calc(100% - 32px));
   text-align: center;
@@ -360,6 +360,7 @@ code {
 .cover-intro__label {
   display: inline-flex;
   align-items: center;
+  top: 80px;
   padding: 4px 8px;
   border-radius: 999px;
   backdrop-filter: blur(5px);
@@ -372,8 +373,8 @@ code {
 .cover-intro .title {
   font-family: "Great Vibes", ui-serif, Georgia, "Times New Roman", Times, serif;
   font-weight: 400;
-  font-size: clamp(34px, 6vw, 56px);
-  margin: 20px 0 20px;
+  font-size: clamp(24px, 6vw, 56px);
+  margin: 90px 0 0px;
   letter-spacing: 0;
   line-height: 1.04;
 }
@@ -386,7 +387,7 @@ code {
 }
 
 .cover-intro .meta {
-  margin-top: 8px;
+  margin-top: 0px;
 }
 
 .cover-door {
