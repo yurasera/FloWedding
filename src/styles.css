@@ -307,13 +307,23 @@ code {
   position: absolute;
   left: 50%;
   top: max(134px, env(safe-area-inset-top));
-  transform: translateX(-50%);
   width: min(520px, calc(100% - 32px));
   text-align: center;
   z-index: 12;
   /* di atas gateway/florals */
   pointer-events: none;
   perspective: 900px;
+}
+
+.cover-intro__sway {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: 50% 0%;
+  will-change: transform;
+  animation: coverBannerSway 7.2s ease-in-out infinite;
 }
 
 .cover-intro::before {
@@ -354,13 +364,12 @@ code {
   pointer-events: none;
   user-select: none;
   filter: drop-shadow(0 20px 55px rgba(8, 12, 22, 0.18));
-  animation: coverBannerSway 7.2s ease-in-out infinite;
 }
 
 .cover-intro__label {
   display: inline-flex;
   align-items: center;
-  top: 80px;
+  top: 110px;
   padding: 4px 8px;
   border-radius: 999px;
   backdrop-filter: blur(5px);
@@ -374,7 +383,7 @@ code {
   font-family: "Great Vibes", ui-serif, Georgia, "Times New Roman", Times, serif;
   font-weight: 400;
   font-size: clamp(24px, 6vw, 56px);
-  margin: 90px 0 0px;
+  margin: 110px 0 0px;
   letter-spacing: 0;
   line-height: 1.04;
 }

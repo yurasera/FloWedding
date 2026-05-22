@@ -222,20 +222,22 @@ export default function CoverHeader({
       {!opened ? (
         <>
           <div className="cover-intro">
-            <img className="cover-intro__banner" src={banner} alt="" aria-hidden="true" />
-            <span className="cover-intro__label">The Wedding Of</span>
-            <h1 className="title">{coupleName}</h1>
-            <div className="meta" aria-label="Tanggal dan tamu">
-              {formattedDateText ? (
-                <Pill className="pill--date">{formattedDateText}</Pill>
+            <div className="cover-intro__sway">
+              <img className="cover-intro__banner" src={banner} alt="" aria-hidden="true" />
+              <span className="cover-intro__label">The Wedding Of</span>
+              <h1 className="title">{coupleName}</h1>
+              <div className="meta" aria-label="Tanggal dan tamu">
+                {formattedDateText ? (
+                  <Pill className="pill--date">{formattedDateText}</Pill>
+                ) : null}
+              </div>
+              <Pill>Kepada Yth.</Pill>
+              {guestName ? (
+                <div className="meta" aria-label="Nama tamu">
+                  <Pill>{guestName}</Pill>
+                </div>
               ) : null}
             </div>
-            <Pill>Kepada Yth.</Pill>
-            {guestName ? (
-              <div className="meta" aria-label="Nama tamu">
-                <Pill>{guestName}</Pill>
-              </div>
-            ) : null}
           </div>
           <div className="row center cover-open">
             <button className="btn btn-primary" onClick={onOpen}>
@@ -246,19 +248,21 @@ export default function CoverHeader({
       ) : (
         <>
           <div className="cover-intro">
-            <img className="cover-intro__banner" src={banner} alt="" aria-hidden="true" />
-            <span className="cover-intro__label">The Wedding Of</span>
-            <h1 className="title">{coupleName}</h1>
-            <div className="meta" aria-label="Tanggal dan tamu">
-              {formattedDateText ? (
-                <Pill className="pill--date">{formattedDateText}</Pill>
+            <div className="cover-intro__sway">
+              <img className="cover-intro__banner" src={banner} alt="" aria-hidden="true" />
+              <span className="cover-intro__label">The Wedding Of</span>
+              <h1 className="title">{coupleName}</h1>
+              <div className="meta" aria-label="Tanggal dan tamu">
+                {formattedDateText ? (
+                  <Pill className="pill--date">{formattedDateText}</Pill>
+                ) : null}
+              </div>
+              {guestName ? (
+                <div className="meta" aria-label="Nama tamu">
+                  <Pill>Kepada Yth. {guestName}</Pill>
+                </div>
               ) : null}
             </div>
-            {guestName ? (
-              <div className="meta" aria-label="Nama tamu">
-                <Pill>Kepada Yth. {guestName}</Pill>
-              </div>
-            ) : null}
           </div>
           <Reveal className="cover-title-open">
             <img className="coin-img" src={coinAi} alt="" aria-hidden="true" />
