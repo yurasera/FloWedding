@@ -352,8 +352,8 @@ code {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: min(290px, 92vw);
-  height: min(69svh, 620px);
+  width: min(215px, 92vw);
+  height: min(49svh, 620px);
   z-index: 9;
   pointer-events: none;
   perspective: 900px;
@@ -367,7 +367,7 @@ code {
   transform: translateX(-50%);
   transform-origin: center bottom;
 
-  width: min(563px, 138vw);
+  width: min(363px, 138vw);
   height: auto;
 
   z-index: 10;
