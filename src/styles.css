@@ -420,7 +420,7 @@ code {
 .cover-door {
   position: absolute;
   left: 50%;
-  bottom: 0;
+  bottom: 10%;
   transform: translateX(-50%);
   width: min(215px, 92vw);
   height: min(49svh, 620px);
@@ -432,7 +432,7 @@ code {
 .cover-gateway {
   position: absolute;
   left: 50%;
-  bottom: 0;
+  bottom: 10%;
 
   transform: translateX(-50%);
   transform-origin: center bottom;
@@ -459,9 +459,9 @@ code {
 .cover-stairway {
   position: absolute;
   left: 50%;
-  bottom: -25%;
+  bottom: -8%;
   transform: translateX(-50%);
-  width: min(390px, 128vw);
+  width: min(490px, 128vw);
   height: auto;
   z-index: 10;
   /* belakang front-florals (11), depan pintu (9) */

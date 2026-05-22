@@ -7,7 +7,7 @@ import doorRight from "../../assets/images/door-right.png";
 import gateway from "../../assets/images/gateway.png";
 import indoor from "../../assets/images/indoor.png";
 import coinAi from "../../assets/images/coin-ai.png";
-import stairway from "../../assets/images/stairway.png";
+import stairway from "../../assets/images/stairway2.png";
 
 function Pill({ children, className = "" }) {
   return <span className={`pill ${className}`.trim()}>{children}</span>;
