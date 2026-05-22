@@ -8,6 +8,7 @@ import gateway from "../../assets/images/gateway.png";
 import indoor from "../../assets/images/indoor.png";
 import coinAi from "../../assets/images/coin-ai.png";
 import stairway from "../../assets/images/stairway2.png";
+import banner from "../../assets/images/banner.png";
 
 function Pill({ children, className = "" }) {
   return <span className={`pill ${className}`.trim()}>{children}</span>;
@@ -221,6 +222,7 @@ export default function CoverHeader({
       {!opened ? (
         <>
           <div className="cover-intro">
+            <img className="cover-intro__banner" src={banner} alt="" aria-hidden="true" />
             <span className="cover-intro__label">The Wedding Of</span>
             <h1 className="title">{coupleName}</h1>
             <div className="meta" aria-label="Tanggal dan tamu">
@@ -243,6 +245,7 @@ export default function CoverHeader({
       ) : (
         <>
           <div className="cover-intro">
+            <img className="cover-intro__banner" src={banner} alt="" aria-hidden="true" />
             <span className="cover-intro__label">The Wedding Of</span>
             <h1 className="title">{coupleName}</h1>
             <div className="meta" aria-label="Tanggal dan tamu">
