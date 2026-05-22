@@ -459,9 +459,9 @@ code {
 .cover-stairway {
   position: absolute;
   left: 50%;
-  bottom: -3%;
+  bottom: -25%;
   transform: translateX(-50%);
-  width: min(290px, 128vw);
+  width: min(390px, 128vw);
   height: auto;
   z-index: 10;
   /* belakang front-florals (11), depan pintu (9) */
