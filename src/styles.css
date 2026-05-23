@@ -461,13 +461,13 @@ code {
   user-select: none;
   opacity: 0.92;
   transition:
-    transform 2.2s ease 1.0s,
-    opacity 0.6s ease 2.2s;
-  transition-delay: 0s, 1000s;
+    transform 2.6s cubic-bezier(0.2, 0.9, 0.2, 1) 0.9s,
+    opacity 0.9s ease 1.6s;
+  will-change: transform, opacity;
 }
 
 .cover.is-open .cover-stairway {
-  transform: translateX(-50%) translateY(140px);
+  transform: translateX(-50%) translateY(220px) scale(0.98);
   opacity: 0;
   /* turun dulu baru fade */
 }
