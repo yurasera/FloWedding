@@ -226,15 +226,15 @@ export default function CoverHeader({
               <img className="cover-intro__banner" src={banner} alt="" aria-hidden="true" />
               <span className="cover-intro__label">The Wedding Of</span>
               <h1 className="title">{coupleName}</h1>
-              <div className="meta" aria-label="Tanggal dan tamu">
+              <div className="meta-date" aria-label="Tanggal dan tamu">
                 {formattedDateText ? (
-                  <Pill className="pill--date">{formattedDateText}</Pill>
+                  formattedDateText
                 ) : null}
               </div>
               <Pill>Kepada Yth.</Pill>
               {guestName ? (
                 <div className="meta" aria-label="Nama tamu">
-                  <Pill>{guestName}</Pill>
+                  {guestName}
                 </div>
               ) : null}
             </div>
