@@ -445,7 +445,7 @@ code {
 
 .cover.is-open .cover-gateway {
   transform:
-    translateX(-50%) translateY(80px) scale(1.92);
+    translateX(-48%) translateY(80px) scale(2.40);
 }
 
 .cover-stairway {
