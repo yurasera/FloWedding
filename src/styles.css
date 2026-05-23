@@ -353,7 +353,7 @@ code {
   position: absolute;
   left: 53%;
   top: -355px;
-  width: min(680px, 175%);
+  width: min(680px, 200%);
   height: auto;
   transform: translateX(-50%);
   transform-origin: 50% 0%;
@@ -375,10 +375,6 @@ code {
   width: min(260px, 72vw);
   transform: translate(-50%, -50%) scale(1);
   z-index: 6;
-}
-
-.cover.is-open .cover-intro__sway {
-  /* animation: none; */
 }
 
 .cover-intro__label {
@@ -406,7 +402,7 @@ code {
   font-family: "Great Vibes", ui-serif, Georgia, "Times New Roman", Times, serif;
   font-weight: 400;
   font-size: clamp(36px, 6vw, 56px);
-  margin: -110px 0 0px;
+  margin: -90px 0 0px;
   letter-spacing: 0;
   line-height: 1.04;
 }
@@ -448,8 +444,9 @@ code {
 .cover-intro .meta-date {
   color: #c0182a;
   letter-spacing: 0.3em;
-  margin-top: 15px;
-  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 22px;
 }
 
 .cover-door {
