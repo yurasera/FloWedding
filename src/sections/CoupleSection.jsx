@@ -1,4 +1,5 @@
 import Reveal from "../components/Reveal.jsx";
+import MicroParallaxScene from "../components/MicroParallaxScene.jsx";
 import Section from "./Section.jsx";
 import { formatDateID, formatTimeID } from "../utils/date.js";
 
@@ -8,6 +9,11 @@ export default function CoupleSection({ invitation, guestName, start }) {
       id="mempelai"
       title="Mempelai"
       subtitle="Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Anda."
+      background={
+        <MicroParallaxScene
+          layers={{ dotgrid: true, sparkles: false, florals: false, ivy: false }}
+        />
+      }
     >
       <div className="grid2 gap">
         <Reveal>
@@ -44,4 +50,3 @@ export default function CoupleSection({ invitation, guestName, start }) {
     </Section>
   );
 }
-

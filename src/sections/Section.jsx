@@ -1,8 +1,15 @@
 import Reveal from "../components/Reveal.jsx";
 
-export default function Section({ id, title, subtitle, children }) {
+export default function Section({
+  id,
+  title,
+  subtitle,
+  background,
+  children,
+}) {
   return (
-    <section id={id} className="section">
+    <section id={id} className={background ? "section has-bg" : "section"}>
+      {background ? <div className="section-bg">{background}</div> : null}
       <div className="container">
         <Reveal>
           <div className="section-head">
@@ -15,4 +22,3 @@ export default function Section({ id, title, subtitle, children }) {
     </section>
   );
 }
-

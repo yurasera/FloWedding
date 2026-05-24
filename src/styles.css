@@ -1126,6 +1126,23 @@ code {
   padding: 54px 0;
 }
 
+.section.has-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.section.has-bg .container {
+  position: relative;
+  z-index: 1;
+}
+
 .section-head {
   margin-bottom: 14px;
 }
