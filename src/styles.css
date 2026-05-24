@@ -1355,6 +1355,34 @@ textarea:focus {
   filter: blur(0);
 }
 
+.reveal.reveal-left {
+  transform: translateX(180px) scale(0.985);
+}
+
+.reveal.reveal-left.is-visible {
+  transform: translateX(0) scale(1);
+}
+
+.reveal.reveal-right {
+  transform: translateX(180px) scale(0.985);
+}
+
+.reveal.reveal-right.is-visible {
+  transform: translateX(0) scale(1);
+}
+
+.name-parallax {
+  display: inline-block;
+  will-change: transform;
+}
+
+.name-parallax-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 10px 14px;
+  box-shadow: 0 10px 24px rgba(8, 12, 22, 0.08);
+}
+
 .footer {
   padding: 54px 0 70px;
   border-top: 1px solid rgba(8, 12, 22, 0.08);
