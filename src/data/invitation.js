@@ -3,12 +3,12 @@ export const invitation = {
     groom: {
       name: "Satria Lian",
       short: "Iyan",
-      parents: "Putra dari Bpk. ... & Ibu ...",
+      parents: "Putra Pertama dari Bapak Muhammad Amri dan Ibu Nurmiati",
     },
     bride: {
       name: "Anila Zulfiana",
       short: "Ana",
-      parents: "Putri dari Bpk. ... & Ibu ...",
+      parents: "Putri Kedua dari Bapak Aprizal dan Ibu Aidayani",
     },
   },
   event: {
