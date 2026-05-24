@@ -1,9 +1,10 @@
-import Reveal from "../components/Reveal.jsx";
-import MicroParallaxScene from "../components/MicroParallaxScene.jsx";
-import Section from "./Section.jsx";
-import { formatDateID, formatTimeID } from "../utils/date.js";
 import { useEffect, useRef } from "react";
+
+import MicroParallaxScene from "../components/MicroParallaxScene.jsx";
+import Reveal from "../components/Reveal.jsx";
 import { usePrefersReducedMotion } from "../components/usePrefersReducedMotion.js";
+import { formatDateID, formatTimeID } from "../utils/date.js";
+import Section from "./Section.jsx";
 
 export default function CoupleSection({ invitation, guestName, start }) {
   const reducedMotion = usePrefersReducedMotion();
@@ -13,6 +14,7 @@ export default function CoupleSection({ invitation, guestName, start }) {
   useEffect(() => {
     if (reducedMotion) return;
 
+    const MAX_X = 32; // px
     const els = [
       { el: groomRef.current, dir: 1 },
       { el: brideRef.current, dir: -1 },
@@ -27,12 +29,11 @@ export default function CoupleSection({ invitation, guestName, start }) {
       const vh = window.innerHeight || 800;
 
       for (const { el, dir } of els) {
-        const r = el.getBoundingClientRect();
-        const center = r.top + r.height / 2;
+        const rect = el.getBoundingClientRect();
+        const center = rect.top + rect.height / 2;
         const t = (center - vh / 2) / (vh / 2); // -1..1 around center
-        const capped = Math.max(-1, Math.min(1, t));
-        const max = 32; // px
-        const x = capped * max * dir;
+        const clamped = Math.max(-1, Math.min(1, t));
+        const x = clamped * MAX_X * dir;
         el.style.transform = `translate3d(${x.toFixed(2)}px, 0, 0)`;
       }
     };
@@ -78,7 +79,6 @@ export default function CoupleSection({ invitation, guestName, start }) {
                 <div className="card-title">{invitation.couple.bride.name}</div>
                 <div className="text muted">{invitation.couple.bride.parents}</div>
               </div>
-             
             </Reveal>
           </div>
         </Reveal>

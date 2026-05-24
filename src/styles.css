@@ -1356,18 +1356,10 @@ textarea:focus {
 }
 
 .reveal.reveal-left {
-  transform: translateX(180px) scale(0.985);
+  transform: translateX(280px) scale(0.985);
 }
 
 .reveal.reveal-left.is-visible {
-  transform: translateX(0) scale(1);
-}
-
-.reveal.reveal-right {
-  transform: translateX(180px) scale(0.985);
-}
-
-.reveal.reveal-right.is-visible {
   transform: translateX(0) scale(1);
 }
 
