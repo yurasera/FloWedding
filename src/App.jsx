@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import Modal from "./components/Modal.jsx";
-import { invitation } from "./data/invitation.js";
+import { invitation } from "./contents/invitation.js";
 import { buildICS } from "./utils/date.js";
 import { useScrollLock } from "./hooks/useScrollLock.js";
 import { useInvitationMeta } from "./hooks/useInvitationMeta.js";
