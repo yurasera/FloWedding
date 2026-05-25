@@ -29,9 +29,9 @@
 
 ## Styling Risks
 
-- Issue: Ketergantungan pada class global di satu stylesheet besar.
-	Risk: konflik class/override meningkat seiring jumlah section dan variasi tema.
-	Suggested improvement: Kelompokkan per section (file terpisah) atau gunakan CSS Modules untuk isolasi.
+- Issue: Ketergantungan pada class global masih tinggi meski file sudah dipecah per fungsi.
+	Risk: konflik class/override tetap mungkin saat jumlah section bertambah.
+	Suggested improvement: Pertimbangkan CSS Modules atau prefixing per section untuk isolasi lebih kuat.
 - Issue: Banyak dekorasi menggunakan inline style dan CSS variables ad-hoc.
 	Risk: sulit dilacak dan rentan salah saat refactor.
 	Suggested improvement: Standarkan token CSS (mis. --motion-*, --parallax-*) dan dokumentasikan.
