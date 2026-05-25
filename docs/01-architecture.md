@@ -2,6 +2,18 @@
 
 FloWedding adalah website undangan pernikahan digital berbasis React + Vite, berupa single-page (tanpa router) dan content-driven dari satu file data lokal.
 
+## Tree
+src/
+ ├── components/   -> reusable UI kecil
+ ├── sections/     -> hero, gallery, story, RSVP
+ ├── hooks/        -> animation, audio, scroll
+ ├── content/      -> wedding data/content
+ ├── utils/        -> helpers
+ ├── assets/
+ ├── layouts/
+ ├── pages/
+ └── App.jsx
+
 ## Mental model
 
 `src/contents/invitation.js` (content)
